@@ -1,6 +1,8 @@
 # play
 
-A single-page website showing why children learn more through play and games than through memorizing textbooks or listening passively. It's meant to live at a `play.` subdomain, such as `play.yourdomain.com`.
+A single-page website showing why children learn more through play and games than through memorizing textbooks or listening passively.
+
+**Live:** https://alandasyla.github.io/play/
 
 The site uses the ideas it describes. Visitors learn the research by playing with it:
 
@@ -13,7 +15,7 @@ The site uses the ideas it describes. Visitors learn the research by playing wit
 - **Play spectrum slider:** from free play to direct instruction (Zosh et al., 2018).
 - **Research cards** with DOI links, playful ideas by age group, and an FAQ.
 
-It's plain HTML, CSS and JavaScript with no build step. The only external resource is Google Fonts (Fredoka and Nunito); system fonts are used if they don't load.
+It's a static site: plain HTML, CSS and JavaScript with no build step. The only external resource is Google Fonts (Fredoka and Nunito); system fonts are used if they don't load.
 
 ## Files
 
@@ -22,24 +24,24 @@ index.html      page content
 css/styles.css  all styles, including Textbook mode and the responsive layout
 js/main.js      toy physics, games, tabs, meter, spectrum, Textbook mode
 favicon.svg
+.nojekyll       tells GitHub Pages to serve the files as they are
 ```
 
 ## Preview locally
 
-Open `index.html` in a browser, or serve the folder:
+Open `index.html` in a browser.
 
-```
-npx serve .
-```
+## Updating the live site
 
-## Put it on the `play` subdomain
+The site is hosted on GitHub Pages from the `main` branch of https://github.com/alandasyla/play. Edit the files, then commit and push to `main`. GitHub republishes automatically, usually within a minute.
 
-1. Upload the folder contents to any static host (Netlify, Vercel, Cloudflare Pages, GitHub Pages, or your own server).
-2. In your domain's DNS, add a `CNAME` record named `play` that points to your host's address. For example:
-   - Netlify: `your-site.netlify.app`
-   - GitHub Pages: `your-user.github.io`
-   - Vercel: `cname.vercel-dns.com`
-3. Add `play.yourdomain.com` as a custom domain in your host's settings. On GitHub Pages, also add a file called `CNAME` containing `play.yourdomain.com`.
-4. Turn on HTTPS (most hosts do this automatically).
+## Adding your own domain later
 
-For shared hosting with cPanel, create the subdomain `play` and upload the files to its document root.
+Once you own a domain (for example `example.com`), the site can live at `play.example.com`:
+
+1. At your domain's DNS provider, add a `CNAME` record named `play` with the value `alandasyla.github.io`.
+2. On GitHub, open the repo's **Settings → Pages**, enter `play.example.com` under **Custom domain** and click **Save**. GitHub adds a `CNAME` file to the repo, so run `git pull` before your next push.
+3. When the DNS check passes (anywhere from a few minutes to a few hours), tick **Enforce HTTPS**.
+4. Recommended: verify the domain under your GitHub profile's **Settings → Pages** so nobody else can use it with GitHub Pages.
+
+After that, the old `alandasyla.github.io/play/` address redirects to the new domain.
