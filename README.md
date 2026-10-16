@@ -2,7 +2,7 @@
 
 A single-page website showing why children learn more through play and games than through memorizing textbooks or listening passively.
 
-**Live:** https://play.alanda.ch (also reachable at https://alandasyla.github.io/play/, which redirects there)
+**Live:** https://alandasyla.github.io/play/
 
 The site uses the ideas it describes. Visitors learn the research by playing with it:
 
@@ -35,11 +35,13 @@ Open `index.html` in a browser.
 
 The site is hosted on GitHub Pages from the `main` branch of https://github.com/alandasyla/play. Edit the files, then commit and push to `main`. GitHub republishes automatically, usually within a minute.
 
-## Custom domain
+## Custom domain (planned)
 
-The site uses **play.alanda.ch**. The domain is registered at ALL-INKL.COM, and the setup has two parts:
+The plan is to move the site to **play.alanda.ch** (domain registered at ALL-INKL.COM) once alanda.ch is active in DNS. To avoid downtime, do it in this order:
 
-- **GitHub:** the `CNAME` file in this repo contains `play.alanda.ch`. Don't delete it, or the site falls back to the github.io address.
-- **ALL-INKL (KAS → Tools → DNS-Einstellungen → alanda.ch):** a DNS record with Name `play`, Type `CNAME`, Prio `0`, and Data `alandasyla.github.io.` (the trailing dot is required at ALL-INKL).
+1. **ALL-INKL** (KAS → Tools → DNS-Einstellungen → alanda.ch → neuen DNS-Eintrag erstellen): Name `play`, Type `CNAME`, Prio `0`, Data `alandasyla.github.io.` (the trailing dot is required at ALL-INKL).
+2. Wait until `play.alanda.ch` opens a GitHub page. It will show a GitHub "404" at first, which is expected.
+3. **GitHub:** in the repo's **Settings → Pages**, enter `play.alanda.ch` under **Custom domain** and click **Save**. GitHub adds a `CNAME` file to the repo, so run `git pull` afterwards.
+4. Once the DNS check passes, tick **Enforce HTTPS**.
 
-Once DNS is active, tick **Enforce HTTPS** under the repo's **Settings → Pages**. The old `alandasyla.github.io/play/` address redirects to the new domain.
+Optional but recommended: verify `alanda.ch` under your GitHub profile's **Settings → Pages** so nobody else can use it with GitHub Pages.
