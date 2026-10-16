@@ -2,7 +2,7 @@
 
 A single-page website showing why children learn more through play and games than through memorizing textbooks or listening passively.
 
-**Live:** https://alandasyla.github.io/play/
+**Live:** https://play.alanda.ch (also reachable at https://alandasyla.github.io/play/, which redirects there)
 
 The site uses the ideas it describes. Visitors learn the research by playing with it:
 
@@ -35,13 +35,11 @@ Open `index.html` in a browser.
 
 The site is hosted on GitHub Pages from the `main` branch of https://github.com/alandasyla/play. Edit the files, then commit and push to `main`. GitHub republishes automatically, usually within a minute.
 
-## Adding your own domain later
+## Custom domain
 
-Once you own a domain (for example `example.com`), the site can live at `play.example.com`:
+The site uses **play.alanda.ch**. The domain is registered at ALL-INKL.COM, and the setup has two parts:
 
-1. At your domain's DNS provider, add a `CNAME` record named `play` with the value `alandasyla.github.io`.
-2. On GitHub, open the repo's **Settings → Pages**, enter `play.example.com` under **Custom domain** and click **Save**. GitHub adds a `CNAME` file to the repo, so run `git pull` before your next push.
-3. When the DNS check passes (anywhere from a few minutes to a few hours), tick **Enforce HTTPS**.
-4. Recommended: verify the domain under your GitHub profile's **Settings → Pages** so nobody else can use it with GitHub Pages.
+- **GitHub:** the `CNAME` file in this repo contains `play.alanda.ch`. Don't delete it, or the site falls back to the github.io address.
+- **ALL-INKL (KAS → Tools → DNS-Einstellungen → alanda.ch):** a DNS record with Name `play`, Type `CNAME`, Prio `0`, and Data `alandasyla.github.io.` (the trailing dot is required at ALL-INKL).
 
-After that, the old `alandasyla.github.io/play/` address redirects to the new domain.
+Once DNS is active, tick **Enforce HTTPS** under the repo's **Settings → Pages**. The old `alandasyla.github.io/play/` address redirects to the new domain.
