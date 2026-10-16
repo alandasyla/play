@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>play — Children learn best through play</title>
+  <meta name="description" content="Why children learn more through play and games than by memorizing textbooks or listening passively — explained with real research, interactive mini-games and practical ideas for parents and teachers.">
+  <meta name="theme-color" content="#fff9ef">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="play — Children learn best through play">
+  <meta property="og:description" content="Less memorizing. More playing. Better learning. Explore the science of playful learning through mini-games.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="js/main.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="tb-banner" id="tb-banner" hidden>
+    <p><strong>Textbook mode.</strong> Please read silently and memorize everything for Friday’s test. Games are not on the syllabus.</p>
+    <button class="btn btn--small" type="button" data-textbook-off>Back to play mode</button>
+  </div>
+
+  <header class="site-header" id="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="#top" aria-label="play — back to top">
+        <span class="logo__block" style="--c: var(--coral); --r: -8deg">p</span>
+        <span class="logo__block" style="--c: var(--sun); --r: 5deg">l</span>
+        <span class="logo__block" style="--c: var(--mint); --r: -4deg">a</span>
+        <span class="logo__block" style="--c: var(--sky); --r: 7deg">y</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#why">Why play</a></li>
+          <li><a class="nav__link" href="#play">Try it</a></li>
+          <li><a class="nav__link" href="#research">Research</a></li>
+          <li><a class="nav__link" href="#ideas">Ideas</a></li>
+          <li><a class="nav__link" href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <button class="mode-toggle" type="button" id="mode-toggle" aria-pressed="false">
+        <span class="mode-toggle__icon" aria-hidden="true">📖</span>
+        <span class="mode-toggle__label">Textbook mode</span>
+        <span class="mode-toggle__track" aria-hidden="true"><span class="mode-toggle__thumb"></span></span>
+      </button>
+
+      <button class="burger" type="button" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__deco" aria-hidden="true">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--2"></span>
+        <span class="blob blob--3"></span>
+      </div>
+
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="sticker" data-textbook="Chapter 1 · Required reading">
+            <span class="sticker__dot" aria-hidden="true"></span> The science of playful learning
+          </p>
+          <h1 class="hero__title" id="hero-title" data-textbook="Chapter 1: On the Educational Value of Play (Memorize for the Test)">
+            Kids learn best when they’re <span class="squiggle">playing</span>, not memorizing.
+          </h1>
+          <p class="hero__lead" data-textbook="Students must read and memorize the following material. Children are learners. Research has been conducted. Play has been observed to have benefits. Underline all key terms and copy each definition into your notebook three times. There will be a quiz.">
+            Children are born scientists, builders and storytellers. Decades of research show that
+            hands-on, joyful, social play builds deeper understanding than drilling facts from a textbook
+            or sitting through a lecture. Don’t just read about it — play your way through the evidence.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--big" href="#play" data-textbook="Begin reading">
+              Start playing
+              <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--big" href="#research" data-textbook="See footnotes">See the research</a>
+          </div>
+
+          <ul class="proof" aria-label="Key findings">
+            <li class="proof__item">
+              <strong class="proof__num">1.5×</strong>
+              <span>more likely to fail in lecture-only classes than with active learning<a class="ref" href="#ref-freeman" aria-label="Source 1">1</a></span>
+            </li>
+            <li class="proof__item">
+              <strong class="proof__num">~1 hour</strong>
+              <span>of a simple board game boosted preschoolers’ number skills<a class="ref" href="#ref-ramani" aria-label="Source 2">2</a></span>
+            </li>
+            <li class="proof__item">
+              <strong class="proof__num">61% vs 40%</strong>
+              <span>remembered a week later by practising recall vs. re-reading<a class="ref" href="#ref-roediger" aria-label="Source 3">3</a></span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero__visual">
+          <div class="playground-wrap">
+            <div class="playground" id="playground" aria-hidden="true">
+              <span class="playground__tag">Toy box · drag &amp; throw</span>
+
+              <div class="toy" style="--s: 112px" data-x=".2" data-y=".3">
+                <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#ff6b57"/><path d="M50 4c-15 14-15 78 0 92" fill="none" stroke="#fff" stroke-width="8"/><path d="M50 4c15 14 15 78 0 92" fill="none" stroke="#ffc23c" stroke-width="8"/><ellipse cx="31" cy="27" rx="9" ry="5" fill="#fff" opacity=".6" transform="rotate(-35 31 27)"/><circle cx="50" cy="50" r="46" fill="none" stroke="#1f1a3d" stroke-width="4"/></svg>
+              </div>
+              <div class="toy" style="--s: 106px" data-x=".76" data-y=".24">
+                <svg viewBox="0 0 100 100"><path d="M50 6 62.3 35 93.8 37.8 70 58.5 77 89.2 50 73 23 89.2 30 58.5 6.2 37.8 37.7 35Z" fill="#ffc23c" stroke="#1f1a3d" stroke-width="4" stroke-linejoin="round"/><circle cx="42" cy="50" r="3.6" fill="#1f1a3d"/><circle cx="58" cy="50" r="3.6" fill="#1f1a3d"/><path d="M43 59q7 6 14 0" fill="none" stroke="#1f1a3d" stroke-width="3.6" stroke-linecap="round"/></svg>
+              </div>
+              <div class="toy" style="--s: 96px" data-x=".46" data-y=".52">
+                <svg viewBox="0 0 100 100"><rect x="6" y="6" width="88" height="88" rx="16" fill="#4cb8ff" stroke="#1f1a3d" stroke-width="4"/><path d="M16 26v-4a6 6 0 0 1 6-6h56" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".55"/><path d="M33 75 50 27l17 48M39 59h22" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="toy" style="--s: 88px" data-x=".82" data-y=".72">
+                <svg viewBox="0 0 100 100"><rect x="6" y="6" width="88" height="88" rx="22" fill="#fff" stroke="#1f1a3d" stroke-width="4"/><g fill="#1f1a3d"><circle cx="30" cy="30" r="7.5"/><circle cx="70" cy="30" r="7.5"/><circle cx="50" cy="50" r="7.5"/><circle cx="30" cy="70" r="7.5"/><circle cx="70" cy="70" r="7.5"/></g></svg>
+              </div>
+              <div class="toy" style="--s: 100px" data-x=".18" data-y=".76">
+                <svg viewBox="0 0 100 100"><path d="M50 10 92 86H8Z" fill="#8b6cff" stroke="#1f1a3d" stroke-width="4" stroke-linejoin="round"/><path d="M48 32 30 66" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".5"/></svg>
+              </div>
+              <div class="toy" style="--s: 94px" data-x=".5" data-y=".16">
+                <svg viewBox="0 0 100 100"><path d="M14 30h21a11 11 0 1 1 22 0h21v19a11 11 0 1 1 0 22v19H14Z" fill="#ff8fc7" stroke="#1f1a3d" stroke-width="4" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="toy" style="--s: 96px" data-x=".44" data-y=".85">
+                <svg viewBox="0 0 100 100"><path d="M8 48 92 14 62 88 46 60Z" fill="#fff" stroke="#1f1a3d" stroke-width="4" stroke-linejoin="round"/><path d="M46 60 92 14M46 60l-4 20 10-10" fill="none" stroke="#1f1a3d" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/></svg>
+              </div>
+              <div class="toy" style="--s: 84px" data-x=".68" data-y=".5">
+                <svg viewBox="0 0 100 100"><rect x="6" y="6" width="88" height="88" rx="16" fill="#2fc8a3" stroke="#1f1a3d" stroke-width="4"/><path d="M32 30h36L46 76" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+          </div>
+          <p class="playground__hint">
+            <span class="playground__hand" aria-hidden="true">👆</span>
+            <span>Go on — grab a toy and throw it. That urge to touch and try? That’s exactly how children learn.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY ============ -->
+    <section class="section section--white" id="why" aria-labelledby="why-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Why play?</p>
+          <h2 class="section-title" id="why-title" data-textbook="Section 2: A Comparison of Instructional Methods">
+            Sit still. Listen. Memorize. <span class="hl">Forget.</span>
+          </h2>
+          <p class="section-lead">
+            For generations, learning has often meant copying from the board, re-reading the textbook and
+            listening quietly. It looks orderly — but knowledge that’s only been heard or crammed fades fast.
+            Children remember what they <em>do</em>, discover and talk about.
+          </p>
+        </header>
+
+        <div class="compare">
+          <article class="compare__card compare__card--passive reveal">
+            <span class="zzz" aria-hidden="true">z<span>z</span><span>z</span></span>
+            <h3><span class="compare__icon" aria-hidden="true">📖</span> The passive way</h3>
+            <ul class="compare__list">
+              <li><span class="mark mark--x" aria-hidden="true">✕</span> The child is the audience</li>
+              <li><span class="mark mark--x" aria-hidden="true">✕</span> Answers come first, questions rarely</li>
+              <li><span class="mark mark--x" aria-hidden="true">✕</span> Mistakes are failures</li>
+              <li><span class="mark mark--x" aria-hidden="true">✕</span> Learning alone, in silence</li>
+              <li><span class="mark mark--x" aria-hidden="true">✕</span> Motivated by grades and rules</li>
+              <li><span class="mark mark--x" aria-hidden="true">✕</span> Memorized for Friday, gone by Monday</li>
+            </ul>
+          </article>
+
+          <div class="compare__vs" aria-hidden="true">vs</div>
+
+          <article class="compare__card compare__card--playful reveal">
+            <span class="compare__sticker" aria-hidden="true">more fun = more learning</span>
+            <h3><span class="compare__icon" aria-hidden="true">🎲</span> The playful way</h3>
+            <ul class="compare__list">
+              <li><span class="mark mark--ok" aria-hidden="true">✓</span> The child is the explorer</li>
+              <li><span class="mark mark--ok" aria-hidden="true">✓</span> Questions come first — answers are discovered</li>
+              <li><span class="mark mark--ok" aria-hidden="true">✓</span> Mistakes are experiments</li>
+              <li><span class="mark mark--ok" aria-hidden="true">✓</span> Learning together, out loud</li>
+              <li><span class="mark mark--ok" aria-hidden="true">✓</span> Motivated by curiosity and fun</li>
+              <li><span class="mark mark--ok" aria-hidden="true">✓</span> Understood, so it sticks</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FLIP A LESSON ============ -->
+    <section class="section section--cream scallop" id="flip" aria-labelledby="flip-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow--mint">Same lesson, two ways</p>
+          <h2 class="section-title" id="flip-title" data-textbook="Section 3: Example Exercises">Flip a boring lesson into a <span class="hl hl--mint">playful</span> one</h2>
+          <p class="section-lead">Any topic can be something to memorize — or something to do. Tap a card to see the playful version.</p>
+        </header>
+
+        <div class="flip-grid">
+          <button class="flip reveal" type="button" aria-pressed="false" style="--c: #ffb3a7">
+            <span class="flip__inner">
+              <span class="flip__face flip__face--front">
+                <span class="flip__subject">Fractions</span>
+                <span class="flip__label">📖 The textbook way</span>
+                <span class="flip__text">“Memorize: ½ = 0.5, ¼ = 0.25, ¾ = 0.75. Complete worksheet 7B.”</span>
+                <span class="flip__cta">Make it playful ↻</span>
+              </span>
+              <span class="flip__face flip__face--back">
+                <span class="flip__subject">Fractions</span>
+                <span class="flip__title">🍕 Pizza party</span>
+                <span class="flip__text">Cut paper pizzas to share fairly between 2, 3 or 4 friends. Who gets more: ⅓ or ¼ of a pizza? Let them argue it out — then check.</span>
+                <span class="flip__cta">Back to the textbook ↻</span>
+              </span>
+            </span>
+          </button>
+
+          <button class="flip reveal" type="button" aria-pressed="false" style="--c: #9fe8d4">
+            <span class="flip__inner">
+              <span class="flip__face flip__face--front">
+                <span class="flip__subject">Plants</span>
+                <span class="flip__label">📖 The textbook way</span>
+                <span class="flip__text">“Read pages 42–45: plants need light and water. Answer questions 1–10.”</span>
+                <span class="flip__cta">Make it playful ↻</span>
+              </span>
+              <span class="flip__face flip__face--back">
+                <span class="flip__subject">Plants</span>
+                <span class="flip__title">🌱 Bean detectives</span>
+                <span class="flip__text">Grow beans in jars — one in a dark cupboard, one never watered, one on the windowsill. Measure every day and chart which one wins.</span>
+                <span class="flip__cta">Back to the textbook ↻</span>
+              </span>
+            </span>
+          </button>
+
+          <button class="flip reveal" type="button" aria-pressed="false" style="--c: #ffe08f">
+            <span class="flip__inner">
+              <span class="flip__face flip__face--front">
+                <span class="flip__subject">Times tables</span>
+                <span class="flip__label">📖 The textbook way</span>
+                <span class="flip__text">“Recite the 7 times table until you know it by heart.”</span>
+                <span class="flip__cta">Make it playful ↻</span>
+              </span>
+              <span class="flip__face flip__face--back">
+                <span class="flip__subject">Times tables</span>
+                <span class="flip__title">🃏 Times-table war</span>
+                <span class="flip__text">Each player flips two cards and multiplies. The biggest product wins the round. Kids start spotting patterns to get faster — and beg for a rematch.</span>
+                <span class="flip__cta">Back to the textbook ↻</span>
+              </span>
+            </span>
+          </button>
+
+          <button class="flip reveal" type="button" aria-pressed="false" style="--c: #c9bbff">
+            <span class="flip__inner">
+              <span class="flip__face flip__face--front">
+                <span class="flip__subject">Shapes</span>
+                <span class="flip__label">📖 The textbook way</span>
+                <span class="flip__text">“Copy the definition: a triangle is a polygon with three sides.”</span>
+                <span class="flip__cta">Make it playful ↻</span>
+              </span>
+              <span class="flip__face flip__face--back">
+                <span class="flip__subject">Shapes</span>
+                <span class="flip__title">🔺 Shape detectives</span>
+                <span class="flip__text">Hide real triangles among sneaky impostors with curvy sides or open corners. Kids hunt them down and work out the secret rules — the kind of guided play that beat direct instruction in a shapes study.</span>
+                <span class="flip__cta">Back to the textbook ↻</span>
+              </span>
+            </span>
+          </button>
+
+          <button class="flip reveal" type="button" aria-pressed="false" style="--c: #a8dcff">
+            <span class="flip__inner">
+              <span class="flip__face flip__face--front">
+                <span class="flip__subject">Spelling</span>
+                <span class="flip__label">📖 The textbook way</span>
+                <span class="flip__text">“Write each spelling word five times. Test on Friday.”</span>
+                <span class="flip__cta">Make it playful ↻</span>
+              </span>
+              <span class="flip__face flip__face--back">
+                <span class="flip__subject">Spelling</span>
+                <span class="flip__title">🔤 Word treasure hunt</span>
+                <span class="flip__text">Letter tiles are hidden around the room. Teams race to find them, build the week’s words, then invent the silliest sentence they can.</span>
+                <span class="flip__cta">Back to the textbook ↻</span>
+              </span>
+            </span>
+          </button>
+
+          <button class="flip reveal" type="button" aria-pressed="false" style="--c: #ffc2e1">
+            <span class="flip__inner">
+              <span class="flip__face flip__face--front">
+                <span class="flip__subject">History</span>
+                <span class="flip__label">📖 The textbook way</span>
+                <span class="flip__text">“Memorize: the Great Fire of London, 1666. Write the date ten times.”</span>
+                <span class="flip__cta">Make it playful ↻</span>
+              </span>
+              <span class="flip__face flip__face--back">
+                <span class="flip__subject">History</span>
+                <span class="flip__title">🎙️ Time-travel newsroom</span>
+                <span class="flip__text">Kids report “live” from London in 1666 as reporters, eyewitnesses and firefighters — and have to get their facts right to stay on air.</span>
+                <span class="flip__cta">Back to the textbook ↻</span>
+              </span>
+            </span>
+          </button>
+        </div>
+
+        <div class="center-row reveal">
+          <button class="btn btn--sun" type="button" id="flip-all">Make them all playful</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GAMES ============ -->
+    <section class="section section--ink scallop" id="play" aria-labelledby="play-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow--coral">Try it yourself</p>
+          <h2 class="section-title" id="play-title" data-textbook="Section 4: Games (Not on the Syllabus)">Don’t read about it. <span class="hl hl--coral">Play it.</span></h2>
+          <p class="section-lead">Two tiny games, each built on a real finding from the science of learning. Notice how much you remember afterwards — that’s the point.</p>
+        </header>
+
+        <div class="arcade reveal">
+          <div class="tabs" role="tablist" aria-label="Mini-games">
+            <button class="tab" type="button" role="tab" id="tab-myth" aria-controls="panel-myth" aria-selected="true">🧐 Myth or Fact?</button>
+            <button class="tab" type="button" role="tab" id="tab-race" aria-controls="panel-race" aria-selected="false" tabindex="-1">🎲 The Number Race</button>
+          </div>
+
+          <div class="arcade__screen">
+            <!-- Myth or Fact -->
+            <div class="panel" role="tabpanel" id="panel-myth" aria-labelledby="tab-myth">
+              <div class="mf" id="mf">
+                <div id="mf-game">
+                  <div class="mf__top">
+                    <div class="mf__progress" aria-hidden="true"><span class="mf__bar" id="mf-bar"></span></div>
+                    <p class="mf__meta">
+                      <span id="mf-count">1 / 10</span>
+                      <span>Score <strong id="mf-score">0</strong></span>
+                      <span id="mf-streak">🔥 0</span>
+                    </p>
+                  </div>
+
+                  <div class="mf__card" id="mf-card">
+                    <p class="mf__kicker">Myth or fact?</p>
+                    <p class="mf__statement" id="mf-statement">Loading…</p>
+                    <div class="mf__answer" id="mf-answer" hidden>
+                      <p class="mf__verdict" id="mf-verdict"></p>
+                      <p class="mf__explain" id="mf-explain"></p>
+                      <p class="mf__source" id="mf-source"></p>
+                    </div>
+                  </div>
+
+                  <div class="mf__actions" id="mf-actions">
+                    <button class="btn btn--big btn--myth" type="button" data-answer="myth">🙅 Myth</button>
+                    <button class="btn btn--big btn--fact" type="button" data-answer="fact">✅ Fact</button>
+                  </div>
+                  <div class="mf__actions">
+                    <button class="btn btn--big btn--primary" type="button" id="mf-next" hidden>Next →</button>
+                  </div>
+                </div>
+
+                <div class="mf__end" id="mf-end" hidden>
+                  <p class="mf__end-kicker">Your score</p>
+                  <p class="mf__end-score" id="mf-end-score">0 / 10</p>
+                  <p class="mf__end-text" id="mf-end-text"></p>
+                  <button class="btn btn--big btn--primary" type="button" id="mf-restart">Play again</button>
+                </div>
+
+                <p class="sr-only" aria-live="polite" id="mf-live"></p>
+              </div>
+            </div>
+
+            <!-- Number race -->
+            <div class="panel" role="tabpanel" id="panel-race" aria-labelledby="tab-race" hidden>
+              <div class="race" id="race">
+                <div class="race__intro">
+                  <h3>The Number Race</h3>
+                  <p>This is the game from a famous study: squares numbered 1–10 in a straight line and a spinner that says 1 or 2. <strong>Say each number out loud as you hop!</strong></p>
+                </div>
+
+                <div class="race__board">
+                  <span class="race__bubble" id="race-bubble" aria-hidden="true"></span>
+                  <span class="token token--you" id="token-you" aria-hidden="true">🦊</span>
+                  <span class="token token--buddy" id="token-buddy" aria-hidden="true">🐼</span>
+                  <ol class="race__track" aria-label="Game board from start to 10">
+                    <li class="race__cell race__cell--start">Start</li>
+                    <li class="race__cell">1</li>
+                    <li class="race__cell">2</li>
+                    <li class="race__cell">3</li>
+                    <li class="race__cell">4</li>
+                    <li class="race__cell">5</li>
+                    <li class="race__cell">6</li>
+                    <li class="race__cell">7</li>
+                    <li class="race__cell">8</li>
+                    <li class="race__cell">9</li>
+                    <li class="race__cell race__cell--finish"><span>10</span></li>
+                  </ol>
+                  <p class="race__legend"><span>🦊 You</span><span>🐼 Buddy</span></p>
+                </div>
+
+                <div class="race__controls">
+                  <div class="spinner" aria-hidden="true">
+                    <div class="spinner__dial">
+                      <span class="spinner__num spinner__num--1">1</span>
+                      <span class="spinner__num spinner__num--2">2</span>
+                    </div>
+                    <div class="spinner__needle" id="spinner-needle"></div>
+                    <div class="spinner__hub"></div>
+                  </div>
+
+                  <div class="race__panel">
+                    <p class="race__status" id="race-status" aria-live="polite">Your turn — spin the spinner!</p>
+                    <div class="race__buttons">
+                      <button class="btn btn--primary" type="button" id="race-spin">Spin!</button>
+                      <button class="btn" type="button" id="race-reset">Restart</button>
+                    </div>
+                    <label class="switch">
+                      <input type="checkbox" id="race-voice">
+                      <span>Say the numbers out loud</span>
+                    </label>
+                    <p class="race__counter">Numbers counted out loud: <strong id="race-count">0</strong></p>
+                  </div>
+
+                  <aside class="race__why">
+                    <h4>Why it works</h4>
+                    <p>On a straight, numbered board, bigger numbers are further along and take more hops and more counting to reach. Preschoolers who played this game for about an hour got better at counting, reading, comparing and estimating numbers — and still had the gains 9 weeks later. The same game with colors instead of numbers didn’t help.</p>
+                    <p class="race__tip"><strong>Try it at home:</strong> draw 10 squares in a row, flip a coin (heads = 1, tails = 2) and race. Keep it straight — a circular board didn’t work as well.</p>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="locked" aria-hidden="true">
+            <p>🔒 Games are not on the syllabus.<br>Please memorize Chapter 4 instead.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INGREDIENTS ============ -->
+    <section class="section section--cream scallop" id="ingredients" aria-labelledby="ing-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">What makes play work</p>
+          <h2 class="section-title" id="ing-title" data-textbook="Section 5: Five Characteristics (Memorize All Five)">The 5 ingredients of <span class="hl">playful learning</span></h2>
+          <p class="section-lead">Researchers reviewing the evidence found that children learn most when an experience is…</p>
+        </header>
+
+        <ol class="ingredients">
+          <li class="ingredient reveal" style="--c: var(--sun)">
+            <span class="ingredient__icon" aria-hidden="true">😄</span>
+            <h3>Joyful</h3>
+            <p>Delight and surprise grab attention and keep children coming back for more. Fun isn’t the opposite of learning — it’s the fuel.</p>
+          </li>
+          <li class="ingredient reveal" style="--c: var(--coral)">
+            <span class="ingredient__icon" aria-hidden="true">🧠</span>
+            <h3>Actively engaging</h3>
+            <p>Minds-on, not just hands-on: children think, choose and do instead of passively receiving.</p>
+          </li>
+          <li class="ingredient reveal" style="--c: var(--mint)">
+            <span class="ingredient__icon" aria-hidden="true">🔗</span>
+            <h3>Meaningful</h3>
+            <p>New ideas stick when they connect to things children already know and care about.</p>
+          </li>
+          <li class="ingredient reveal" style="--c: var(--sky)">
+            <span class="ingredient__icon" aria-hidden="true">🔁</span>
+            <h3>Iterative</h3>
+            <p>Try, wobble, tweak, try again. Play makes mistakes safe — and mistakes are where learning happens.</p>
+          </li>
+          <li class="ingredient reveal" style="--c: var(--grape)">
+            <span class="ingredient__icon" aria-hidden="true">🤝</span>
+            <h3>Socially interactive</h3>
+            <p>Explaining, debating and sharing with others deepens understanding — and builds social skills too.</p>
+          </li>
+        </ol>
+        <p class="source-note reveal">Source: Zosh et al. (2017), <em>Learning through play: a review of the evidence</em>, The LEGO Foundation.</p>
+
+        <div class="meter reveal" id="meter">
+          <div class="meter__pick">
+            <p class="eyebrow eyebrow--sky">Playful-o-meter</p>
+            <h3>Is it playful? Rate an activity</h3>
+            <p>Pick an activity and see how many of the five ingredients it contains.</p>
+            <div class="meter__chips" id="meter-chips" role="group" aria-label="Activities"></div>
+          </div>
+          <div class="meter__result">
+            <div class="gauge" aria-hidden="true">
+              <div class="gauge__arc"></div>
+              <div class="gauge__needle" id="gauge-needle"></div>
+              <div class="gauge__hub"></div>
+            </div>
+            <p class="meter__score" aria-live="polite"><strong id="meter-score">0</strong>/5 · <span id="meter-label">Snooze-fest</span></p>
+            <ul class="meter__list" id="meter-list"></ul>
+            <p class="meter__tip" id="meter-tip"></p>
+            <p class="meter__note">Our quick, illustrative take — not a scientific rating.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SPECTRUM ============ -->
+    <section class="section section--white" id="spectrum" aria-labelledby="spec-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow--grape">Not all play is the same</p>
+          <h2 class="section-title" id="spec-title">Slide along the <span class="hl hl--sky">play spectrum</span></h2>
+          <p class="section-lead">Play isn’t “anything goes”. Researchers describe a spectrum from child-led free play to adult-led instruction. The sweet spot for learning school skills? Somewhere in the middle.</p>
+        </header>
+
+        <div class="spectrum reveal">
+          <div class="spectrum__scale" aria-hidden="true"><span>← Child-led</span><span>Adult-led →</span></div>
+          <div class="spectrum__track">
+            <span class="spectrum__sweet" aria-hidden="true">Learning sweet spot</span>
+            <input class="spectrum__range" type="range" min="0" max="4" step="1" value="1" id="spectrum-range" aria-label="Type of play" aria-valuetext="Guided play">
+            <div class="spectrum__stops">
+              <button class="spectrum__stop" type="button" style="--p: 0" data-stop="0">Free play</button>
+              <button class="spectrum__stop" type="button" style="--p: .25" data-stop="1">Guided play</button>
+              <button class="spectrum__stop" type="button" style="--p: .5" data-stop="2">Games</button>
+              <button class="spectrum__stop" type="button" style="--p: .75" data-stop="3">Playful instruction</button>
+              <button class="spectrum__stop" type="button" style="--p: 1" data-stop="4">Direct instruction</button>
+            </div>
+          </div>
+
+          <article class="spectrum__card" id="spectrum-card">
+            <div>
+              <span class="spectrum__badge" id="spectrum-badge">Learning sweet spot</span>
+              <h3 id="spectrum-name">Guided play</h3>
+              <dl class="spectrum__facts">
+                <div><dt>Who sets it up?</dt><dd id="spectrum-starts">An adult</dd></div>
+                <div><dt>Who’s in charge?</dt><dd id="spectrum-leads">The child</dd></div>
+                <div><dt>Learning goal?</dt><dd id="spectrum-goal">Yes</dd></div>
+              </dl>
+            </div>
+            <div class="spectrum__body">
+              <p><strong>Example</strong><span id="spectrum-example"></span></p>
+              <p><strong>Great for</strong><span id="spectrum-best"></span></p>
+            </div>
+          </article>
+          <p class="source-note">Based on Zosh et al. (2018), “Accessing the Inaccessible: Redefining Play as a Spectrum”, <em>Frontiers in Psychology</em>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH ============ -->
+    <section class="section section--lilac scallop" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow--sky">The evidence</p>
+          <h2 class="section-title" id="research-title" data-textbook="Section 6: References">What the research <span class="hl hl--coral">actually</span> says</h2>
+          <p class="section-lead">Real studies in plain language, with links so you can check our homework.</p>
+        </header>
+
+        <div class="research-grid">
+          <article class="study reveal" id="ref-freeman" style="--c: #ffb3a7">
+            <p class="study__tag">University · 225 studies</p>
+            <p class="study__stat">1.5×</p>
+            <h3 class="study__title">Lectures make failing more likely</h3>
+            <p>Across 225 studies of university science and maths courses, students in traditional lecture classes were 1.5 times more likely to fail than students in classes with active learning. Exam scores rose by about 6% with active learning.</p>
+            <p class="study__cite">Freeman et al. (2014), <em>PNAS</em> · <a href="https://doi.org/10.1073/pnas.1319030111" target="_blank" rel="noopener">Read the study ↗</a></p>
+          </article>
+
+          <article class="study reveal" id="ref-ramani" style="--c: #ffe08f">
+            <p class="study__tag">Ages 4–5 · Randomized experiment</p>
+            <p class="study__stat">~1 hour</p>
+            <h3 class="study__title">A board game builds number sense</h3>
+            <p>Preschoolers from low-income families played a simple 1–10 number board game in four 15–20-minute sessions. They got better at counting, reading numbers, comparing and estimating — and the gains lasted 9 weeks. Classmates who played the same game with colors instead of numbers didn’t improve.</p>
+            <p class="study__cite">Ramani &amp; Siegler (2008), <em>Child Development</em> · <a href="https://eric.ed.gov/?id=EJ789398" target="_blank" rel="noopener">Read the study ↗</a></p>
+          </article>
+
+          <article class="study reveal" id="ref-skene" style="--c: #9fe8d4">
+            <p class="study__tag">Ages 1–8 · Systematic review</p>
+            <p class="study__stat">39 studies</p>
+            <h3 class="study__title">Guided play beats direct instruction for early maths</h3>
+            <p>A 2022 review of 39 studies (17 pooled in a meta-analysis) found guided play had a greater positive effect than direct instruction on early maths skills, shape knowledge and task switching — a key thinking skill.</p>
+            <p class="study__cite">Skene et al. (2022), <em>Child Development</em> · <a href="https://doi.org/10.1111/cdev.13730" target="_blank" rel="noopener">Read the study ↗</a></p>
+          </article>
+
+          <article class="study reveal" id="ref-roediger" style="--c: #a8dcff">
+            <p class="study__tag">Students · Memory experiment</p>
+            <p class="study__stat">61% vs 40%</p>
+            <h3 class="study__title">Recalling beats re-reading</h3>
+            <p>A week after studying a text, students who had practised recalling it remembered 61% of its ideas; students who simply re-read it remembered 40%. Quizzes, games and challenges are packed with this kind of retrieval practice.</p>
+            <p class="study__cite">Roediger &amp; Karpicke (2006), <em>Psychological Science</em> · <a href="https://doi.org/10.1111/j.1467-9280.2006.01693.x" target="_blank" rel="noopener">Read the study ↗</a></p>
+          </article>
+
+          <article class="study reveal" id="ref-wouters" style="--c: #c9bbff">
+            <p class="study__tag">Meta-analysis · 77 comparisons</p>
+            <p class="study__stat">5,547 learners</p>
+            <h3 class="study__title">Learning games boost learning and memory</h3>
+            <p>Serious games led to more learning and better retention than conventional instruction — especially when combined with other teaching, played over several sessions and played in groups.</p>
+            <p class="study__cite">Wouters et al. (2013), <em>Journal of Educational Psychology</em> · <a href="https://doi.org/10.1037/a0031311" target="_blank" rel="noopener">Read the study ↗</a></p>
+          </article>
+
+          <article class="study reveal" id="ref-bonawitz" style="--c: #ffc2e1">
+            <p class="study__tag">Preschoolers · Experiment</p>
+            <p class="study__stat">Told ≠ taught</p>
+            <h3 class="study__title">Showing the answer can shrink curiosity</h3>
+            <p>When an adult demonstrated one function of a new toy, preschoolers explored more narrowly and discovered fewer of its other hidden functions than children who weren’t taught. Instruction is efficient — but it can switch off exploration.</p>
+            <p class="study__cite">Bonawitz et al. (2011), <em>Cognition</em> · <a href="https://doi.org/10.1016/j.cognition.2010.10.001" target="_blank" rel="noopener">Read the study ↗</a></p>
+          </article>
+
+          <article class="study reveal" id="ref-fisher" style="--c: #ffd0a1">
+            <p class="study__tag">Ages 4–5 · Experiment</p>
+            <p class="study__stat">3 ways tested</p>
+            <h3 class="study__title">Shapes stick better through guided play</h3>
+            <p>Seventy 4- and 5-year-olds learned about shapes through guided play, free play or direct instruction. The guided-play group understood shapes best — and the advantage was still there a week later.</p>
+            <p class="study__cite">Fisher et al. (2013), <em>Child Development</em> · <a href="https://doi.org/10.1111/cdev.12091" target="_blank" rel="noopener">Read the study ↗</a></p>
+          </article>
+
+          <article class="study reveal" id="ref-aap" style="--c: #b9f0a8">
+            <p class="study__tag">Pediatrics · Clinical report</p>
+            <p class="study__stat">℞ Play</p>
+            <h3 class="study__title">Doctors are told to “prescribe” play</h3>
+            <p>The American Academy of Pediatrics encourages a “prescription for play” at well-child visits, stating: “Play is not frivolous: it enhances brain structure and function and promotes executive function.”</p>
+            <p class="study__cite">Yogman et al. (2018), <em>Pediatrics</em> · <a href="https://doi.org/10.1542/peds.2018-2058" target="_blank" rel="noopener">Read the report ↗</a></p>
+          </article>
+
+          <article class="study study--fineprint reveal">
+            <p class="study__tag">Honesty corner</p>
+            <h3 class="study__title">The fine print</h3>
+            <ul class="fineprint">
+              <li>The strongest evidence for school skills is for <strong>guided play</strong> — a playful activity with a learning goal and a supportive adult — not for leaving kids entirely alone with toys.</li>
+              <li>Effects vary: the 2022 review found no clear difference between guided play and direct instruction for literacy or social-emotional outcomes.</li>
+              <li>Many lecture-vs-active studies involve university students, and some play studies are small.</li>
+              <li>Play works best <em>alongside</em> good teaching, not instead of it.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ IDEAS ============ -->
+    <section class="section section--cream scallop" id="ideas" aria-labelledby="ideas-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow--coral">Bring it home</p>
+          <h2 class="section-title" id="ideas-title" data-textbook="Section 7: Suggested Homework">Playful ideas for <span class="hl hl--sun">every age</span></h2>
+          <p class="section-lead">No special kit required — just a little imagination. Pick an age group:</p>
+        </header>
+
+        <div class="ideas reveal">
+          <div class="tabs tabs--light" role="tablist" aria-label="Age groups">
+            <button class="tab" type="button" role="tab" id="tab-age-1" aria-controls="panel-age-1" aria-selected="true">Ages 3–5</button>
+            <button class="tab" type="button" role="tab" id="tab-age-2" aria-controls="panel-age-2" aria-selected="false" tabindex="-1">Ages 6–8</button>
+            <button class="tab" type="button" role="tab" id="tab-age-3" aria-controls="panel-age-3" aria-selected="false" tabindex="-1">Ages 9–12</button>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-age-1" aria-labelledby="tab-age-1">
+            <div class="idea-grid">
+              <article class="idea" style="--c: #ffb3a7">
+                <div class="idea__head"><span class="idea__emoji" aria-hidden="true">🐸</span><span class="idea__time">10 min</span></div>
+                <h3>Number line hop</h3>
+                <p>Chalk or tape ten squares numbered 1–10. Flip a coin — heads hop 1, tails hop 2 — and shout each number as you land.</p>
+                <p class="idea__learn"><strong>Learns:</strong> counting, number order, “bigger = further”</p>
+              </article>
+              <article class="idea" style="--c: #c9bbff">
+                <div class="idea__head"><span class="idea__emoji" aria-hidden="true">🔺</span><span class="idea__time">15 min</span></div>
+                <h3>Shape detectives</h3>
+                <p>Cut out real triangles and sneaky impostors (curvy sides, open corners). Can they find the real ones and explain the secret rule?</p>
+                <p class="idea__learn"><strong>Learns:</strong> shapes, reasoning, describing</p>
+              </article>
+              <article class="idea" style="--c: #a8dcff">
+                <div class="idea__head"><span class="idea__emoji" aria-hidden="true">🛁</span><span class="idea__time">15 min</span></div>
+                <h3>Sink or float lab</h3>
+                <p>Fill a tub with water and gather ten household objects. Predict, test, then sort them into “sinkers” and “floaters”. Any surprises?</p>
+                <p class="idea__learn"><strong>Learns:</strong> predicting, testing, early science</p>
+              </article>
+              <article class="idea" style="--c: #9fe8d4">
+                <div class="idea__head"><span class="idea__emoji" aria-hidden="true">🪨</span><span class="idea__time">10 min</span></div>
+                <h3>Story stones</h3>
+                <p>Draw simple pictures on pebbles. Pull out three and invent a story together — then swap who starts.</p>
+                <p class="idea__learn"><strong>Learns:</strong> vocabulary, sequencing, imagination</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-age-2" aria-labelledby="tab-age-2" hidden>
+            <div class="idea-grid">
+              <article class="idea" style="--c: #ffe08f">
+                <div class="idea__head"><span class="idea__emoji" aria-hidden="true">🍕</span><span class="idea__time">20 min</span></div>
+                <h3>Pizza fractions</h3>
+                <p>Cut paper-plate pizzas into halves, thirds and quarters. Share them fairly between friends, then debate: is ⅓ or ¼ bigger?</p>
+                <p class="idea__learn"><strong>Learns:</strong> fractions, fairness, comparing</p>
+              </article>
+              <article class="idea" style="--c: #ffb3a7">
+                <div class="idea__head"><span class="idea__emoji" aria-hidden="true">🃏</span><span class="idea__time">15 min</span></div>
+                <h3>Times-table war</h3>
+                <p>Each player flips two cards and multiplies. The biggest product wins the round. Start with just the 2s, 5s and 10s.</p>
+                <p class="idea__learn"><strong>Learns:</strong> multiplication fluency, patterns</p>
+              </article>
+              <article class="idea" style="--c: #9fe8d4">
+                <div class="idea__head"><span class="idea__emoji" aria-hidden="true">🔤</span><span class="idea__time">20 min</span></div>
+                <h3>Spelling treasure hunt</h3>
+                <p>Hide letter tiles around the room. Teams race to find them and build this week’s words, then write the silliest sentence they can.</p>
+                <p class="idea__learn"><strong>Learns:</strong> spelling, teamwork, sentence building</p>
+              </article>
+              <article class="idea" style="--c: #a8dcff">
+                <div class="idea__head"><span class="idea__emoji" aria-hidden="true">🌱</span><span class="idea__time">2 weeks</span></div>
+                <h3>Bean detectives</h3>
+                <p>Plant beans in clear jars: one in the dark, one without water, one on the windowsill. Measure each day and chart the race.</p>
+                <p class="idea__learn"><strong>Learns:</strong> fair tests, measuring, graphs</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-age-3" aria-labelledby="tab-age-3" hidden>
+            <div class="idea-grid">
+              <article class="idea" style="--c: #ffe08f">
+                <div class="idea__head"><span class="idea__emoji" aria-hidden="true">🛒</span><span class="idea__time">45 min</span></div>
+                <h3>Classroom market</h3>
+                <p>Kids price products, get a budget and run a market. Add a “sale day” with percentages off and track who makes a profit.</p>
+                <p class="idea__learn"><strong>Learns:</strong> decimals, percentages, budgeting</p>
+              </article>
+              <article class="idea" style="--c: #c9bbff">
+                <div class="idea__head"><span class="idea__emoji" aria-hidden="true">🎲</span><span class="idea__time">1–2 hours</span></div>
+                <h3>Design-a-board-game</h3>
+                <p>Pick a topic they’re studying — the water cycle, Ancient Egypt — and design a board game about it. Playtest, fix the rules, play again.</p>
+                <p class="idea__learn"><strong>Learns:</strong> deep understanding, systems thinking, iteration</p>
+              </article>
+              <article class="idea" style="--c: #ffb3a7">
+                <div class="idea__head"><span class="idea__emoji" aria-hidden="true">🔐</span><span class="idea__time">30 min</span></div>
+                <h3>Escape-room review</h3>
+                <p>Turn revision into locked boxes: each puzzle uses something from the last unit, and every answer unlocks the next clue.</p>
+                <p class="idea__learn"><strong>Learns:</strong> retrieval practice, problem-solving, collaboration</p>
+              </article>
+              <article class="idea" style="--c: #9fe8d4">
+                <div class="idea__head"><span class="idea__emoji" aria-hidden="true">🌉</span><span class="idea__time">30 min</span></div>
+                <h3>Paper bridge challenge</h3>
+                <p>With only paper and tape, build a bridge between two books. Test it with coins: which shape holds the most? Redesign and beat your record.</p>
+                <p class="idea__learn"><strong>Learns:</strong> engineering, forces, persistence</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="recipe reveal">
+          <h3>Turn <span class="hl hl--coral">any</span> lesson into play — the 5-step recipe</h3>
+          <ol class="recipe__steps">
+            <li class="recipe__step" style="--c: var(--sun)"><strong>Start with a question</strong><p>Swap “Here’s the answer” for “What do you think will happen?”</p></li>
+            <li class="recipe__step" style="--c: var(--coral)"><strong>Hand it over</strong><p>Let kids touch, build, sort and test — minds-on and hands-on.</p></li>
+            <li class="recipe__step" style="--c: var(--mint)"><strong>Add a gentle goal</strong><p>A challenge or a secret rule to discover turns free play into guided play.</p></li>
+            <li class="recipe__step" style="--c: var(--sky)"><strong>Make mistakes cheap</strong><p>Retries are part of the game. Ask: “What will you try next?”</p></li>
+            <li class="recipe__step" style="--c: var(--pink)"><strong>Play together, then talk</strong><p>Explaining what they found is what locks the learning in.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--white" id="faq" aria-labelledby="faq-title">
+      <div class="container faq">
+        <header class="faq__intro reveal">
+          <p class="eyebrow eyebrow--mint">Good questions</p>
+          <h2 class="section-title" id="faq-title">Grown-ups often ask…</h2>
+          <p class="section-lead">Curious, sceptical or both? Excellent — that’s the right attitude for learning anything.</p>
+          <div class="faq__doodle" aria-hidden="true">?</div>
+        </header>
+
+        <div class="faq__list">
+          <details class="faq__item reveal" open>
+            <summary>Isn’t play just… fun? Where’s the learning?</summary>
+            <div class="faq__answer"><p>Fun is the hook, not the goal. In guided play, an adult designs the activity around a learning goal and lets the child lead the exploring. Studies comparing it with direct instruction find equal or better results for many early skills — especially maths and shapes.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Does this mean no more teaching or textbooks?</summary>
+            <div class="faq__answer"><p>No. Clear explanations, good books and practice still matter. The point is balance: many children spend far too much time listening and copying and too little time doing. Mix in active, playful formats and the teaching you do will stick better.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>My child has exams. Won’t play waste time?</summary>
+            <div class="faq__answer"><p>Quizzes, games and challenges are packed with retrieval practice — one of the most effective ways to prepare for tests. In one classic study, practising recall beat re-reading by 61% to 40% a week later. Playful revision is exam prep that kids don’t dread.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Do educational apps and video games count?</summary>
+            <div class="faq__answer"><p>Some do. Check for the same five ingredients: does it make kids think (not just tap), connect to their world, let them try again, and involve other people? Learning games tend to work best alongside other teaching and when played with others.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>What age does this apply to?</summary>
+            <div class="faq__answer"><p>All ages. The richest research on play is in early childhood, but active, game-like learning also beats passive lecturing for older students — even at university.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>How much play is enough?</summary>
+            <div class="faq__answer"><p>There’s no magic number. A good rule of thumb: children should spend a big part of each day actively doing — building, testing, talking, moving — rather than passively receiving. And protect unstructured free play too: under the UN Convention on the Rights of the Child, play is a right, not a reward.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta reveal">
+          <span class="cta__shape cta__shape--1" aria-hidden="true"></span>
+          <span class="cta__shape cta__shape--2" aria-hidden="true"></span>
+          <span class="cta__shape cta__shape--3" aria-hidden="true"></span>
+          <h2 id="cta-title">Tomorrow, turn one lesson into a game.</h2>
+          <p>Start small: one question instead of an answer, one game instead of a worksheet. Then watch what sticks.</p>
+          <div class="cta__actions">
+            <button class="btn btn--big btn--dark" type="button" id="share-btn">Share this site</button>
+            <a class="btn btn--big" href="#play">Play the games again</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="logo" href="#top" aria-label="play — back to top">
+          <span class="logo__block" style="--c: var(--coral); --r: -8deg">p</span>
+          <span class="logo__block" style="--c: var(--sun); --r: 5deg">l</span>
+          <span class="logo__block" style="--c: var(--mint); --r: -4deg">a</span>
+          <span class="logo__block" style="--c: var(--sky); --r: 7deg">y</span>
+        </a>
+        <p>A small site about a big idea: children learn best by playing — not by memorizing.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2 class="footer__title">Explore</h2>
+        <ul class="footer__links">
+          <li><a href="#why">Why play</a></li>
+          <li><a href="#flip">Flip a lesson</a></li>
+          <li><a href="#play">Mini-games</a></li>
+          <li><a href="#spectrum">Play spectrum</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#ideas">Ideas by age</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer__title">Good to know</h2>
+        <p>Every study is linked in the research section. This site is for general information and isn’t professional advice.</p>
+        <p><button class="link-btn" type="button" data-textbook-on>Try Textbook mode (if you dare)</button></p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> play · Made with curiosity.</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+</body>
+</html>
